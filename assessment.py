@@ -17,10 +17,9 @@ def all_odd(numbers):
         []
     """
     odd_numbers = [number for number in numbers if number % 2 == 1]
-#Also works to exclude 0 for math correctness
+#Also works to exclude 0 for math correctness (so it's superior to != 2)
+#Alternately could use traditional for loop, but since we're filtering a list this wins for brevity without obfustication.
     return odd_numbers
-
-#Delete print lines from debugging!
 
 def print_indices(items):
     """Print index of each item in list, followed by item itself.
@@ -40,8 +39,12 @@ def print_indices(items):
         1 Jeep
         2 Volvo
     """
-
-    print "Nothing at all"
+    #this is one of those theoretical functions where "item" variable name will have to do. In The Real World (tm) I'd use something more descriptive.
+    for item in items:
+        index = items.index(item)
+        print index, item
+    #Alternately this: print "{} {}".format(index, item)
+    #But that seems like overkill for something python will do on it's own
 
 
 def foods_in_common(foods1, foods2):
@@ -71,8 +74,12 @@ def foods_in_common(foods1, foods2):
         []
 
     """
-
-    return ['the wrong thing']
+    #sets will make finding the intersection very easy. So turn the input into sets rather than lists
+    foods1_set = {food for food in foods1}
+    foods2_set = {food for foods in foods2}
+    #Alternately, could use use a for-loop over foods2 seeking each item in foods1, then loop over foods1 with each item in foods2 excluding any items you filtered out on the first loop
+    foods_in_common = sorted([food for foods in foods1_set & foods2_set])
+    return foods_in_common
 
 
 def every_other_item(items):
