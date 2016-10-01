@@ -76,9 +76,9 @@ def foods_in_common(foods1, foods2):
     """
     #sets will make finding the intersection very easy. So turn the input into sets rather than lists
     foods1_set = {food for food in foods1}
-    foods2_set = {food for foods in foods2}
+    foods2_set = {food for food in foods2}
     #Alternately, could use use a for-loop over foods2 seeking each item in foods1, then loop over foods1 with each item in foods2 excluding any items you filtered out on the first loop
-    foods_in_common = sorted([food for foods in foods1_set & foods2_set])
+    foods_in_common = sorted([food for food in foods1_set & foods2_set])
     return foods_in_common
 
 
