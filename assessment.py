@@ -4,7 +4,7 @@ Edit the functions until all of the doctests pass when
 you run this file.
 """
 
-#######ASSESSMENT NOTE: I have a migraine. I'm pushing first to get functions that work, with a plan to scan for stlye once I sleep this off. ##########
+#######ASSESSMENT NOTE: I have a migraine. I'm pushing first to get functions that work, with a plan to scan for stlye once I sleep this off. This is here in case it takes longer than I hope. ##########
 
 def all_odd(numbers):
     """Return a list of only the odd numbers in the input list.
@@ -121,7 +121,7 @@ def largest_n_items(items, n):
         >>> largest_n_items([3, 3, 3, 2, 1], 2)
         [3, 3]
     """
-    #Negative numbers will bork my list slice later, as will "0" which means return no content for people but "return zeroth thing" for computers. So, translate
+    #Negative numbers will bork my list slice later, as will "0" which means "return no content" for people but "return zeroth thing" for computers. So, translate
     abs_n = abs(n)
     if n <= -1:
         print "That's not really how we quantify things. We're going to assume you meant {}".format(abs_n)
